@@ -1,10 +1,4 @@
 # Yourls-Telegram
-## STEP 1 - Create a bot with Botfather
-## STEP 2 - Add this line to YOURLS config.php. 
-*Replace * with your bot token.*
-
-define( 'THUONGTIN_TELEGRAM_TOKEN', '*' );
-## STEP 3 - Add this line to YOURLS config.php.
-*Replace * with your telegram ID.*
-
-define( 'THUONGTIN_TELEGRAM_SEND_TO', '*' );
+STEP 1 - Create a bot with Botfather;
+STEP 2 - Define your bot token as 'THUONGTIN_TELEGRAM_TOKEN';
+STEP 3 - Define the array of receivers telegram IDs as $GLOBALS['send_to'] in your YOURLS config.php.

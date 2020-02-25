@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: Click Bell
-Plugin URI: 
+Plugin Name: Telegram Notification
+Plugin URI:
 Description: Send link click notifications via Telegram
 Version: 1.0
 Author: Davide Ruggeri
@@ -20,9 +20,11 @@ function warning_open ( $args ) {
 	$msg = "Link cliccato";
 	$msg .= "\nKeyword: " . $keyword;
 	$msg .= "\nIP: " . $_SERVER['REMOTE_ADDR'];
-		
-	$content = array('chat_id' => THUONGTIN_TELEGRAM_SEND_TO, 'text' => $msg);
-	$telegram->sendMessage($content);
+	foreach ($GLOBALS["send_to"] as $destinatario)
+	{
+		$content = array('chat_id' => $destinatario, 'text' => $msg);
+		$telegram->sendMessage($content);
+	}
 }
 
 function prevent_cache($args)
